@@ -1,0 +1,50 @@
+$layout-name: 'l-section';
+
+.#{$layout-name} {
+  width: 100%;
+
+  &--slanted {
+    background-color: $instagram-color;
+    color: #fff;
+    margin-top: $global-module-size * 3;
+    min-height: rem-calc(300);
+    transform: skewY(-3deg);
+
+    .#{$layout-name}__content {
+      padding: $global-module-size;
+      transform: skewY(3deg);
+    }
+  }
+
+  &--hero {
+    background: url(../img/hero.jpg) no-repeat center center;
+    background-size: cover;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      background-color: #fff;
+      content: '';
+      height: 100%;
+      left: -50%;
+      position: absolute;
+      top: 100%;
+      transform-origin: right;
+      transform: skewY(10deg);
+      width: 100%;
+    }
+
+    &::after {
+      background-color: #fff;
+      content: '';
+      height: 100%;
+      right: -50%;
+      position: absolute;
+      top: 100%;
+      transform-origin: left;
+      transform: skewY(-10deg);
+      width: 100%;
+    }
+  }
+}
